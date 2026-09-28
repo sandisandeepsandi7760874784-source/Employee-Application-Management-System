@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manager Dashboard</title>
+</head>
+
+<body>
+
+<h1>Manager Dashboard</h1>
+
+<table border="1">
+
+<tr>
+    <th>Name</th>
+    <th>Leave Type</th>
+    <th>Start</th>
+    <th>End</th>
+    <th>Days</th>
+    <th>Reason</th>
+    <th>Status</th>
+    <th>Action</th>
+</tr>
+
+{% for leave in data %}
+
+<tr>
+    <td>{{ leave[1] }}</td>
+    <td>{{ leave[2] }}</td>
+    <td>{{ leave[3] }}</td>
+    <td>{{ leave[4] }}</td>
+    <td>{{ leave[5] }}</td>
+    <td>{{ leave[6] }}</td>
+    <td>{{ leave[7] }}</td>
+
+    <td>
+        <a href="/approve/{{ leave[0] }}">Approve</a>
+        |
+        <a href="/reject/{{ leave[0] }}">Reject</a>
+    </td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/">Employee Page</a>
+
+</body>
+</html>
